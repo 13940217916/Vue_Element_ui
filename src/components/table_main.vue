@@ -1,5 +1,5 @@
 <template>
-  <div class="table">
+  <div id="table_box">
     <el-table :data="tableData2" stripe border style="margin: 60px 0 0 20px;">
       <el-table-column label="学号" prop="code" width="180" align="center"></el-table-column>
       <el-table-column label="日期" prop="date" width="180" align="center"></el-table-column>
@@ -24,7 +24,7 @@
 
 <script>
     export default {
-      name: "table",
+      name: "table_main",
       data(){
           return{
             tableData2: [{

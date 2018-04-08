@@ -4,18 +4,10 @@
     <el-menu
       default-active="1"
       class="el-menu-vertical-demo"
-      @open="handleOpen"
-      @close="handleClose"
       text-color="#545c64"
       active-text-color="#ffd04b">
-      <el-menu-item index="1">
-        <span slot="title">学生信息</span>
-      </el-menu-item>
-      <el-menu-item index="2">
-        <span slot="title">新生信息录入</span>
-      </el-menu-item>
-      <el-menu-item index="3">
-        <span slot="title">学生信息</span>
+      <el-menu-item v-bind:index=x.order v-for="(x,index) in nav_data" v-on:click="tab_nav(x)">
+        <span slot="title">{{x.name}}</span>
       </el-menu-item>
     </el-menu>
   </div>
@@ -23,14 +15,30 @@
 
 <script>
     export default {
-      name: "",
+      name: "nav_bar",
+      data(){
+        return{
+          nav_data:[
+            {
+              order:'1',
+              name:'学生信息'
+            },
+            {
+              order:'2',
+              name:'新生信息录入'
+            },
+            {
+              order:'3',
+              name:'课程表信息'
+            }
+          ]
+        }
+      },
       methods:{
-        handleOpen(key, keyPath) {
-          console.log(key, keyPath);
-        },
-        handleClose(key, keyPath) {
-          console.log(key, keyPath);
-        },
+        tab_nav:function(item){
+          var nav_index = item.order
+          this.$emit("nav_index",nav_index)
+        }
       }
     }
 </script>
