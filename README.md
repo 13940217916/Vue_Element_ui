@@ -1,5 +1,5 @@
 # element_ui
-![image]('https://github.com/13940217916/Vue_Element_ui/tree/master/static/ui.png')
+![image](./static/img/ui.png)
 > A Vue.js project
 
 ## Build Setup
